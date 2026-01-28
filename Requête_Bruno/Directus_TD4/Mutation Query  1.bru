@@ -1,0 +1,26 @@
+meta {
+  name: Mutation Query  1
+  type: http
+  seq: 11
+}
+
+post {
+  url: http://localhost:8055/graphql
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer 75XA8Y_t7bkAWaYFUsrr8wAGxxXM_-hZ
+}
+
+body:json {
+  {
+    "query": "mutation { create_specialite_item(data: { libelle: \"cardiologie\" }) { id libelle } }"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,56 @@
+meta {
+  name: Requête Query 3
+  type: http
+  seq: NaN
+}
+
+post {
+  url: http://localhost:8055/graphql
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer 75XA8Y_t7bkAWaYFUsrr8wAGxxXM_-hZ
+}
+
+body:json {
+  {
+    "query": "query { praticien {id nom prenom telephone ville specialite_id{ libelle}}}"
+  }
+  
+}
+
+body:text {
+  {
+    query {
+      items_specialite_by_id(id: 2) {
+        id
+        libelle
+      }
+    }
+  }
+}
+
+body:xml {
+  {
+    query {
+      items_specialite_by_id(id: 2) {
+        id
+        libelle
+      }
+    }
+  }
+}
+
+body:sparql {
+  {
+    "query": "query { items_specialite { id libelle } }"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

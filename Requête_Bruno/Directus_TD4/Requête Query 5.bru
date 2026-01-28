@@ -1,0 +1,23 @@
+meta {
+  name: Requête Query 5
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8055/graphql
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "query": "query { praticien(filter: { ville: { _eq: \"Paris\" }, email: { _contains: \".fr\" } }) { id nom prenom email telephone ville specialite_id { libelle } structure_id {ville}} }"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

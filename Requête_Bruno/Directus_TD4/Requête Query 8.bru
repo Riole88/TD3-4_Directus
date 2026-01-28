@@ -1,0 +1,23 @@
+meta {
+  name: Requête Query 8
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:8055/graphql
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "query": "query { praticiensParis: praticien(filter: { ville: { _eq: \"Paris\" } }) { ...PraticienFields } praticiensBourdon: praticien(filter: { ville: { _eq: \"Bourdon-les-Bains\" } }) { ...PraticienFields } } fragment PraticienFields on praticien { id nom prenom ville }"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

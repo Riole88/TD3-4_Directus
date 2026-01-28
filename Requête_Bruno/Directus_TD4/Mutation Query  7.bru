@@ -1,0 +1,26 @@
+meta {
+  name: Mutation Query  7
+  type: http
+  seq: 18
+}
+
+post {
+  url: http://localhost:8055/graphql
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer 75XA8Y_t7bkAWaYFUsrr8wAGxxXM_-hZ
+}
+
+body:json {
+  {
+    "query": "mutation { update_praticien_item(id: 1, data: { structure_id: \"c302d11b-d5b8-310a-bbc5-9dd4400eb2c9\" }) { id nom structure_id { nom ville } } }"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

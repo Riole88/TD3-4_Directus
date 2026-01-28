@@ -1,0 +1,23 @@
+meta {
+  name: Requête Query 10
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:8055/graphql
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "query": "query { structure { nom ville praticien_id { nom prenom email specialite_id { libelle } } } }"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
